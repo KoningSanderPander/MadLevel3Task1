@@ -7,21 +7,47 @@
     tools:context=".RatingFragment">
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/tvRateTheGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        android:text="@string/welcome_games_rating"
+        app:layout_constraintBottom_toTopOf="@+id/tvNameGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_margin="8dp"
+        app:layout_constraintVertical_chainStyle="packed"/>
 
-    <Button
-        android:id="@+id/button_second"
+    <TextView
+        android:id="@+id/tvNameGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/rbRating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRateTheGame" />
+
+    <RatingBar
+        android:id="@+id/rbRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnToSummary"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameGame" />
+
+    <Button
+        android:id="@+id/btnToSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_summary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/rbRating" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
