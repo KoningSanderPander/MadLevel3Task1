@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_summary.*
 import kotlinx.android.synthetic.main.rating_fragment.*
 
 const val ARG_GAME_NAME = "arg_game_name"
@@ -20,5 +22,19 @@ class SummaryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_summary, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        tvSummary.text = String.format(
+            "You rated %s with %.1f stars! Thanks?",
+            arguments?.getString(ARG_GAME_NAME),
+            arguments?.getFloat(ARG_GAME_RATING)
+        )
+
+        btnStartOver.setOnClickListener {
+            findNavController()
+                .navigate(R.id.action_SummaryFragment_to_StartFragment)
+        }
+    }
 
 }

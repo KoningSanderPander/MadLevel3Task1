@@ -34,7 +34,9 @@
         android:label="fragment_summary"
         tools:layout="@layout/fragment_summary" >
         <action
-            android:id="@+id/action_summaryFragment_to_SecondFragment"
-            app:destination="@id/RatingFragment" />
+            android:id="@+id/action_SummaryFragment_to_StartFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/StartFragment"
+            app:destination="@id/StartFragment" />
     </fragment>
 </navigation>
