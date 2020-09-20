@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.rating_fragment.*
 
 const val ARG_GAME_NAME = "arg_game_name"
 const val ARG_GAME_RATING = "arg_game_rating"
@@ -18,4 +19,6 @@ class SummaryFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_summary, container, false)
     }
+
+
 }
